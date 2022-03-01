@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+echo "Hi"
+
+echo "Hello"
+
+echo "World!"

@@ -1,0 +1,32 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use Getopt::Long 'GetOptions';
+
+# オプション取得
+GetOptions(
+  'ignore-case|i', => \my $ignore_case,
+);
+
+# 第一引数は正規表現
+my $re_str = shift;
+
+# 第二引数以降あるいは、標準入力
+while (my $line = <>) {
+  
+  my $re;
+  
+  # 大文字・小文字を無視
+  if ($ignore_case) {
+    $re = qr/$re_str/i;
+  }
+  # 大文字・小文字を無視しない
+  else {
+    $re = qr/$re_str/;
+  }
+  
+  if ($line =~ /$re/) {
+    print "$line";
+  }
+}

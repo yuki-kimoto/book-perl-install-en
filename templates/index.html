@@ -1,0 +1,145 @@
+<h2>PerlでポータブルなLinuxファイル管理入門</h2>
+
+<table>
+  <tr><td><a href="top.html">見開き</a></td><td><a href="top.pdf">見開きPDF</a></td></tr>
+  <tr><td><a href="beginning.html">はじめに</a></td><td><a href="beginning.pdf">はじめにPDF</a></td></tr>
+  <tr><td><a href="toc.html">目次</a></td><td><a href="toc.pdf">目次PDF</a></td></tr>
+  <tr><td><a href="chapter01_title.html">第１章 扉</a><br><a href="chapter01.html">第１章 Linuxファイル管理の特徴</a></td><td><a href="chapter01_title.pdf">扉PDF</a><br><a href="chapter01.pdf">本文PDF</a> </td></tr>
+  <tr><td><a href="chapter02_title.html">第２章 扉</a><br><a href="chapter02.html">第２章 Linuxコマンドを覚えよう</a></td><td><a href="chapter02_title.pdf">扉PDF</a><br><a href="chapter02.pdf">本文PDF</a> </td></tr>
+  <tr><td><a href="chapter03_title.html">第３章 扉</a><br><a href="chapter03.html">第３章 ファイルバックアップの自動化</a></td><td><a href="chapter03_title.pdf">扉PDF</a><br><a href="chapter03.pdf">本文PDF</a> </td></tr>
+  <tr><td><a href="chapter03_title.html">第４章 扉</a><br><a href="chapter04.html">第４章 PerlワンライナーとLinuxコマンドの組み合わせ</a></td><td><a href="chapter04_title.pdf">扉PDF</a><br><a href="chapter04.pdf">本文PDF</a> </td></tr>
+  <tr><td><a href="chapter04_title.html">第５章 扉</a><br><a href="chapter05.html">第５章 Perlファイル操作</a></td><td><a href="chapter05_title.pdf">扉PDF</a><br><a href="chapter05.pdf">本文PDF</a> </td></tr>
+  <tr><td></td><td><a href="book.pdf">書籍全体のPDF</a></td></tr>
+</table>
+
+<h3>書籍情報</h3>
+
+ISBNは、Amazonのペーパーバックで発行してもらう。
+
+PerlでポータブルなLinuxファイル管理入門
+
+Perlクラブ
+
+2022年1月1日発売
+
+書籍 1490円
+
+電子書籍 499円
+
+フルカラー。
+
+A5サイズ「148 mm x 210 mm」
+
+<h3>印刷</h3>
+
+ページ数 120p(本文116p + 表紙 4p)
+
+ラクスルは、124ページが最大。表紙の4ページを含んだページ数なので、本文の最大は、120p。
+
+Amazonのペーパーバックでオンデマンド印刷する。
+
+<h3>wkhtmltopdf</h3>
+
+<h4>wkhtmltopdfのインストール</h4>
+
+インストール手順。wkhtmltopdfのインストールは難しい。
+
+依存ライブラリ。SSLのエラーを回避。
+
+<pre>
+sudo apt install -y libxrender1
+sudo apt install -y libssl1.0-dev
+sudo apt install -y libfontconfig
+sudo apt install -y fonts-ipafont
+</pre>
+
+wkhtmltopdfのインストール
+
+<pre>
+sudo wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+sudo tar xvf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+sudo mv wkhtmltox/bin/wkhtmlto* /usr/bin/
+sudo ln -nfs /usr/bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf
+</pre>
+
+確認。
+
+<pre>
+/usr/local/bin/wkhtmltopdf --version
+</pre>
+
+出力結果
+
+<pre>
+wkhtmltopdf 0.12.3 (with patched qt)
+</pre>
+
+PDF::API2のインストール
+
+<pre>
+cpanm PDF::API2
+</pre>
+
+IPAフォントのインストール
+
+<pre>
+sudo apt install -y fonts-ipafont
+</pre>
+
+<h4>wkhtmltopdfの注意点</h4>
+
+一番上のmargin-topは効かない。
+
+--lowqualityを指定しないと、章見出しがずれるのはなぜ?
+
+目次のページ番号を入れるのは、非常に難しいので、あきらめる。
+
+索引にページ番号を入れるのも非常に難しいので、あきらめる。章番号にする。
+
+background-imageは勝手に枠を入れられてしまう。囲みのborder-radiusもかける。背景画像は使わないほうがよいのか。
+
+display:flexは使えない。widthにculcは使えない。
+
+画像に設定した、ボーダーがうまく表示されない。枠囲みは、画像ソフトでやる必要がある。
+
+ソースコードの横の文字数は、50字と少ししか使えないから工夫する
+
+画像は相対パスで指定する必要がある(2021-07-07追記)。
+
+画像は、グレースレール変換をしたものを使う(2021-07-07追記)。
+
+画像編集はJTrimというツールを使っています(2021-07-07追記)。
+
+<h3>Kindle</h3>
+
+PDFをKindleで販売できるようにするにはKindle Comic Creatorを使う
+
+<a href="https://www.amazon.co.jp/gp/feature.html?ie=UTF8&docId=3077699036">Kindle Comic Creator</a>
+
+本の言語 日本語
+
+Kindleパネルビュー いいえ
+
+表紙を指定。
+
+本の組方向 アンロック
+
+本のページ進行方向 左から右へ
+
+解像度は変更なし。
+
+DRMは、はい。
+
+KF8形式でエクスポート、mobi形式で保存(ファイル名の末尾になぞの「）」が付いているので削除)
+
+Kindleで出版。
+
+<h3>ペーパーバック</h3>
+
+ペーパーバックの表紙計算ツールを使う。
+
+Wordを使って、表紙全体のサイズで作成。
+
+画像を中央寄せする。PDFで保存。
+
+背景色をページ全体につけることはできない。コンテンツがはみ出していると認識される。
