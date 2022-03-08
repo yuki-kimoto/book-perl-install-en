@@ -21,11 +21,76 @@
     <img width="65" src="images/chapter_top.png">
   </div>
   <div class="chapter_description_right">
-    Linuxファイル管理で、よく使うコマンドを紹介していくよ。文字列を出力、ファイルの一覧、ファイルの作成・削除、ディレクトリの移動・コピー、ファイルの内容を確認、パーミッションを変更する方法をマスターしよう。
-
-
+    Explains strings, numbers and Perl basic syntax.
   </div>
 </div>
+
+<h2>Perl Basic Syntax</h2>
+
+<h3>Syntax Check</h3>
+
+Be sure to write the following two lines first.
+
+<pre>
+use strict;
+use warnings;
+</pre>
+
+<a href="/blog/20130912137895.html">use strict</a> makes syntax check strict.
+
+<a href="/blog/20130916137930.html">use warnings</a> displays warnings to prevent mistakes.
+
+<h3>print function</h3>
+
+The <a href="/blog/20170404149131.html">print function</a> prints a string to the standard output.
+
+<pre>
+print "Hello world";
+</pre>
+
+<h3>Comments</h3>
+
+Perl's <a href="/blog/20130712137361.html">comment</a>.
+
+<pre>
+# comment
+</pre>
+
+<h3>Variable Declarations</h3>
+
+The <a href="/blog/20080307120491.html">my</a> keyword declares a <a href="/blog/20161107147852.html">variable</a>.
+
+<pre>
+# Scalar variables
+my $num;
+
+# Array variables
+my @students
+
+# Hash variables
+my %month_num;
+</pre>
+
+<h3>Execution of Perl Programs</h3>
+
+The <b>perl</b> command executes Perl programs.
+
+<pre>
+perl script.pl
+</pre>
+
+If you want to print the output to a file, you can use redirection.
+
+<pre>
+perl script.pl > file.txt
+</pre>
+
+These are executed on CUI envrinements, for example:
+
+<ul>
+  <li><a href="/blog/20080603121251.html">Command Prompt on Windows</a></li>
+  <li>Shell on Mac/<a href="https://en.linux.perlzemi.com/">Linux</a>/UNIX</li>
+</ul>
 
 <h2>文字列を出力するコマンド</h2>
 
