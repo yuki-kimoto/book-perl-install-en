@@ -22,396 +22,362 @@
     <img width="65" src="images/kaeru_w_01.png">
   </div>
   <div class="chapter_description_right">
-    The first day starts Perl installation. I explain the way to install Perl on Windows, Mac, Linux/UNIX.
+    Let's install Perl on Windows. 
   </div>
 </div>
 
-<h2>Perl Installation on Windows</h2>
+<h2>Installing Strawberry Perl on Windows</h2>
 
-Let's download and install Perl on Windows. The version of Windows is Windows 11 in this descriptions. You can do almost same ways on Windows 7, 8, 10.
+<b>Strawberry Perl</b> is one of the Windows Perl distributions. Strawberry Perl is easy to install and has the C language compiler <a href="https://en.wikipedia.org/wiki/MinGW">MinGW</a>, a CPAN module installer <a href="/blog/20101027127859.html">cpanm</a> and often used C libraries.
 
-<h3>Strawberry Perl Web Site</h3>
+<a href="http://strawberryperl.com"><img style = "border: 1px solid # ddd; max-width: 450px;" src="/images/strawberry_perl/strawberry_perl_logo.png"></a>
 
-Let's access the page of Strawberry Perl. Strawberry Perl is a Perl distribution for Windows.
-　
-<b>Strawberry Perl for Windows</b>
-https://strawberryperl.com/
-　
-<div>
-  <img src="images/chapter01/strawberry_perl.png" width="400">
-</div>
- 
-<h3>Strawberry Perl Donload</h3>
+<a href="http://strawberryperl.com">Strawberry Perl for Windows</a>
 
-Let's download and install Strawberry Perl. The 2022 latest version is Perl 5.32.
+<h3>What is Strawbery Perl?</h3>
 
-Click <b>strawberry-perl-5.32.0.1-64bit.msi</b> at the page of Strawberry Perl. You can donwload Strawberry Perl.
+Strawbery Perl can be downloaded without registration. Older versions of Perl are available.
 
-<div>
-  <img src="images/chapter01/strawberry_perl_download.png">
-</div>
+<a href="https://ja.wikipedia.org/wiki/MinGW">MinGW</a> is a <a href="https://en.c.perlzemi.com/">C</a>/<a href="https://en.wikipedia.org/wiki/C%2B%2B">C++</a> compiler that can be used on Windows. MinGW is compatible with <a href="https://en.linux.perlzemi.com/blog/20201216103956.html">gcc</a> of <a href="https://en.linux.perlzemi.com/">Linux</a>/<a href="https://en.wikipedia.org/wiki/Unix">UNIX</a>.
 
-<h3>Strawberry Perlのインストール</h3>
- 
-ダウンロードしたStrawberry Perlをダブルクリックします。インストーラーが起動します。空き容量の計算に少し時間がかかる場合がありますが、そのまま待ちましょう。インストーラーが起動しますので「Next」を押して進みます。
+<b>gmake</b> is also available. gmake is a port of GNU make to Windows.
 
-途中で「I accept the terms in the License Agreement」というチェックボックスがでてくるので、チェックをいれて「Next」を押します。
+For the reason that Strawbery Perl has gcc and gmake, many <a href="/blog/20101008127859.html">CPAN</a> modules written in C/C++ can be installed on Windows.
 
-さらに「Next」を押して進んでいって、最後に「Install」をクリックするとStrawberry Perlのインストールが始まります。
+The <a href="/blog/20101027127859.html">cpanm</a> command allows you to install CPAN modules quickly and easily. If you create a <b>cpanfile</b> required modules are defined , you can install all modules you need at once.
 
-ここで「この不明な発行元からのアプリがデバイスに変更を加えることを許可しますか?」というダイアログが表示されると思いますが、「はい」をクリックしましょう。
+<h3>Downloading Strawberry Perl</h3>
 
-5分くらい時間がかかるので待ちましょう。
+Assuming Windows 10, I explain how to download and install Strawberry Perl. The way to download and install is almost the same for older versions of Windows(Windows 8, Windows 7).
 
-プログレスバーが満タンになると、Strawberry Perlのインストールが完了します。
+Let's download and install Strawberry Perl. The latest version of Perl 2022 is Perl 5.32.
 
-「Finish」を押してダイアログを閉じましょう。Readmeが表示されますが、これも閉じて大丈夫です。
+Click <b> Strawberry Perl 5.32 64bit MSI installer </b> of the following link to download Strawberry Perl.
 
-<h3>Perlがインストールされていることの確認</h3>
+<ul>
+  <li>
+    <a href="http://strawberryperl.com/releases.html">Strawberry Perl Releases</a>
+  </li>
+</ul>
 
-インストールが完了したら実際にStrawberry Perlがインストールできているか確認してみましょう。
+<a href="http://strawberryperl.com/releases.html"><img style = "border: 1px solid ddd" src="/images/strawberry_perl/strawberry_perl_msi.png"></a>
 
-コマンドプロンプトというツールをを実行してPerlのバージョンを表示してみます。
+MSI installer is the default installer for Windows.
 
-コマンドプロンプトは画面左下のウインドウズの「スタートメニュー」→「アプリの一覧」→「Windowsシステムツール」→「コマンドプロンプト」から実行できます。
+The version number at the end(5.32.x.y) may be a little different, but don't worry.
 
-黒い画面がでてくるので、以下の文字をキーボードで入力し「Enter」を押してみてください。
+In most cases, the 64-bit version of Windows will work, but if you need the 32-bit version, download the 32-bit version of Strawberry Perl.
+
+<h3>Installing Strawberry Perl</h3>
+
+Double-click the downloaded installer file of Strawberry Perl.
+
+The installer will start. It may take some time to calculate the free space. Please wait.
+
+Press "Next" to proceed.
+
+A check box that hears "I accept the terms in the License Agreement" will appear. Check it and press "Next".
+
+Press "Next" to proceed, and finally click "Install" to start Strawberry Perl.
+
+You'll see a dialog here, "Do you want to allow apps from this unknown publisher to make changes to your device?". Click "Yes".
+
+It will take about 5 minutes. Please wait.
+
+When the progress bar is full, the Strawberry Perl installation is complete.
+
+Press "Finish" to close the dialog. A Readme will be displayed. Close it.
+
+<h3>Check the Installing Strawberry Perl</h3>
+
+Let's check if Strawberry Perl is installed.
+
+<h4>Command Prompt</h4>
+
+At first, you execute <a href="/blog/20080603121251.html">Command Prompt</a>. Command Prompt is a Windows CLI tool.
+
+The command prompt can be executed from:
+
+"Start Menu" | "List of Apps" | "Windows System Tools" | "Command Prompt".
+
+A black screen will appear. This is Command Prompt.
+
+<img src="/images/commandprompt/commandprompt.png">
+
+Input the following command to display the version of Perl.
 
 <pre>
 perl -v
 </pre>
 
-次のようにバージョン情報が表示されればインストールは成功しています。
+And press "Enter".
+
+The version information of Perl is displayed.
 
 <pre>
-This is perl 5, version 32, subversion 0 (v5.32.0) built for MSWin32-x64-multi-thread
+This is perl 5, version 32, subversion 0 (v5.32.1) built for MSWin32-x64-multi-thread
 </pre>
 
-これでStrawberry Perlのインストールは完了です。
+If you can see this, the installation of Strawberry Perl is succeed.
 
-<h3>Windowsへのその他のPerlのインストール方法</h3>
+<h3>Trouble Shooting</h3>
 
-Windowsへのその他のPerlのインストール方法も紹介しておきます。 
+If Strawberry Perl doesn't work, see the following trouble shooting.
+
+<h4>The Priority of PATH Environment Variable</h4>
+
+If another Perl such as ActivePerl or Strawberry Perl 32bit is already installed, the Strawberry Perl installed in this article may not work due to the priority problem of the PATH environment variable.
+
+Move the path of Perl you want to use to the front of other Perls.
+
+<h3>The other ways to Install Strawberry Perl</h3>
+
+The ways to install Strawberry Perl other than MSI.
+
+<h4>ZIP Version of Strawberry Perl</h4>
+
+ZIP Version of Strawberry Perl is also prepared.
+
+<h4>Portable Version of Strawberry Perl</h4>
+
+Portable Version of Strawberry Perl is also prepared.
+
+<h3>Other Ways to Install Perl on Windows</h3>
+
+See the following links to known other ways to install Perl on Windows.
+
+<h4>Installing Strawberry Perl using Chocolatey</h4>
+
+Chocolatey is a CLI tool to manage applications on Windows.
+
+<ul>
+  <li>
+    <a href="/blog/20220426170406.html">Installing Strawberry Perl using Chocolatey</a>
+  </li>
+</ul>
 
 <h4>ActivePerl</h4>
 
-Windows用のPerlディストリビューションとしてよく知られたActivePerlをインストールしてPerlを実行することができます。
+ActivePerl is another Windows Perl distribution.
+
+<ul>
+  <li>
+    <a href="/blog/20080602121231.html">Installing Active Perl on Windows</a>
+  </li>
+</ul>
 
 <h4>msys2</h4>
 
-msys2と呼ばれるUnixの疑似環境をインストールして、Perlを実行できます。Perlのサーバーアプリケーションなど、UNIXの機能を必要とするアプリケーションも正しく動かすことができます。Unixの疑似環境なので、シンボリックリンクなど本物のLinux/UNIXと一部互換性がない部分もあります。
+If you want a Linux pseudo environment on Windows, you can use msys2.
 
-<h4>WSL2</h4>
+<ul>
+   <li>
+     <a href="/blog/20180806153350.html">Installing msys2 on Windows to use Perl</a>
+   </li>
+</ul>
 
-WSL2と呼ばれるLinux環境をWindows上で有効にして、Perlを実行できます。本物のLinux環境なので、Linuxの機能を必要とするPerlのサーバーアプリケーションを完全に正しく動かすことができます。これは、Windows 10の機能です。 
+<h3>Other CLI Tools</h3>
 
-<h2>コマンドプロンプトでPerlを実行する</h2>
+Other CLI Tools to run Perl.
 
-WindowsでPerlを実行するにはコマンドプロンプトと呼ばれるツールを使用します。perlコマンドを使ってPerlプログラムを実行できます。
+<ul>
+  <li>
+    <a href="/blog/20220420170117.html">PowerShell(pwsh) Tutorail for Perl</a>
+  </li>
+</ul>
 
-まず最初にWindowsにおけるコマンド実行ツールであるコマンドプロンプトについて解説します。
+<h2>Installing msys2 and Perl on Windows</h2>
 
-<h3>コマンドプロンプトとは</h3>
+Explains how to install <a href="https://www.msys2.org">msys2</a> and Perl on Windows. The msys2 is a software to build a Linux-like environment on Windows. Perl can be installed on msys2.
 
-コマンドプロンプトとは、Windows環境におけるCUIを用いたプログラムの実行環境のことです。CUIとは、Character-based User Interfaceの略で、テキストを入力して、プログラムを実行する環境のことです。Windows上で、Perlプログラムを実行するときは、コマンドプロンプトを使います。
+<img src="/images/msys2.png">
 
-<h3>コマンドプロンプトを実行するには</h3>
+On msys2, you can use <a href="https://en.linux.perlzemi.com/blog/20200211081227.html">Linux commands</a> such as <a href="https://en.linux.perlzemi.com/blog/20191126082723.html">ls</a>, <a href="https://en.linux.perlzemi.com/blog/20200113083613.html">cat</a>, <a href="https://en.linux.perlzemi.com/blog/20190129171737.html">tar</a>, and <a href="https://en.git.perlzemi.com/">git</a>. The terminal charset is UTF-8.
 
-画面左下のWindowsメニューからアプリの一覧で「Windowsシステムツール」→「コマンドプロンプト」で実行できます。コマンドプロンプトのアイコンを左クリックでドラッグして、デスクトップに、ショートカットを作っておくと便利です。
+The msys2 is compatible with POSIX. The Perl web framework such as <a href="https://en.mojolicious.perlzemi.com/">Mojolicious</a> can work correctly.
 
-コマンドプロンプトを実行すると、以下のようにコマンドプロンプトが立ち上がります。
+<h3>Download of msys2</h3>
 
-<img src="images/chapter01/commandprompt.png">
+Let's download msys2 from the following page.
 
-コマンドプロンプトのホームディレクトリは、ユーザーディレクトリです。
+<ul>
+  <li>
+    <a href="https://www.msys2.org/">msys2.org</a>
+  </li>
+</ul>
 
-この例では以下です。
+Click "the installer: msys2-x86_64-20220319.exe" and donwload msys2 to your desktop.
 
-<pre>
-C:\Users\kimot
-</pre>
+<h3>Installing msys2</h3>
 
-<h3>拡張子を表示する</h3>
+Double-click the msys2 icon on your desktop.
 
-Perlのプログラムは単なるテキストファイルですが、拡張子を「.pl」にするので、拡張子を表示するように設定しておきましょう。拡張子とはプログラムの種類を表すためのものです。
+Press Next.
 
-画面左下のWindowsメニューを右クリック → 「エクスプローラー」をクリック → 上のタブの「表示」をクリック → 「ファイル名拡張子」にチェックを入れる。
+Press Finish. The msys2 will start.
 
-<h3>Perlプログラムを作成する</h3>
+<h3>Execution of msys2</h3>
 
-コマンドプロンプトのホームディレクトリをエクスプローラーで開きましょう。
+You close msys2. Next time, you find the msys2 program.
 
-この例では以下のディレクトリにアクセスします。
+"Windows Start Menu" | "List of Apps" | "MSYS2 64bit".
 
-<pre>
-C:\Users\kimot
-</pre>
+You will see three msys2 program.
 
-画面左下のWindowsメニューを右クリック → 「エクスプローラー」をクリック → 左メニュー「OS(C:)」をクリック → 「ユーザー」をクリック → 「kimot」をクリック。
+<ul>
+  <li>
+    MSYS2 MinGW 64bit
+  </li>
+  <li>
+    MSYS2 MINGW 32bit
+  </li>
+  <li>
+    <b>MSYS2 MSYS</b>
+  </li>
+</ul>
 
-Usersに該当する部分は、日本語では「ユーザー」と表示されていることに注意してください。
+Click <b>MSYS2 MSYS</b>. This is needed to run Perl.
 
-C:\Users\kimotのディレクトリの空いている部分を右クリック→「新規作成」→「テキスト文書」。名前を「start.pl」にして保存してください。「拡張子を変えると動かなくなる可能性があります」の注意ができますが、そのまま進めます。
+"MSYS2 MinGW 64bit" and "MSYS2 MINGW 32bit" are used to create Windows native apps.
 
-「.pl」の関連付けをメモ帳に変更します。使っているテキストエディタがある場合は、使っているテキストエディタに関連付けを変更してください。
+<h3>Instalation of Perl on msys2</h3>
 
-「start.pl」を右クリック →「プログラムから開く」→「別のプログラムを選択」→「メモ帳」→「常にこのアプリを使って.plファイルを開く」にチェック。
-
-「start.pl」をクリックして、メモ帳で開く。
-
-以下の内容を入力してください。
-
-<pre>
-print "Hello World";
-</pre>
-
-左上の「ファイル」→「上書き保存」で保存します。ショートカットキー「Ctrl + s」でも保存できます。
-
-<h3>Perlプログラムを実行する</h3>
-
-Perlを実行するにはperlコマンドを使用します。コマンドプロンプトで以下の記述してEnterを入力してください。
-
-<pre>
-perl start.pl
-</pre>
-
-以下のように出力されれば、Perlプログラムを実行できています。おめでとうございます。
+Let's install Perl. <b>pacman</b> is the package manager of msys2.
 
 <pre>
-Hello World
+pacman -S perl perl-CPAN msys2-devel make libcrypt-devel
 </pre>
 
-コマンドプロンプトでよく使うコマンドをいくつか紹介します。
+Copy the above command and paste it on msys2 by clicking the right mouse button.
 
-<h3>ファイル一覧を表示する - dirコマンド</h3>
+You will be asked if you want to install them. Press "Enter".
 
-ファイル一覧を表示するには「dir」コマンドを使用します。「dir」と入力してEnterを押すと、ファイルの一覧が表示されます。
+The following softwares will be installed for Perl.
 
-<pre>
-dir
-</pre>
+<ul>
+  <li>
+    perl (perl)
+  </li>
+  <li>
+    cpan (perl-CPAN)
+  </li>
+  <li>
+    gcc (msys2-devel)
+  </li>
+  <li>
+    make (make)
+  </li>
+  <li>
+    crypt.h (libcrypt-devel)
+  </li>
+</ul>
 
-以下のようにファイルが表示されます。
+Some Perl modules are written by C/C++ language. To compile these modules, <a href="https://en.linux.perlzemi.com/blog/20201216103956.html">gcc</a> and make are required.
 
-<pre>
-2021/03/25  16:54    <DIR>          Desktop
-2021/03/18  10:58    <DIR>          Documents
-2021/03/29  08:04                20 start.pl
-</pre>
+<h3>Check of Perl Installation</h3>
 
-<h3>ディレクトリを作成する - mkdirコマンド</h3>
-
-ディレクトリを作成するにはmkdirコマンドを使用します。ディレクトリとはフォルダのことです。
-
-<pre>
-mkdir ディレクトリ名
-</pre>
-
-testという名前のディレクトリを作成してみましょう。
-
-<pre>
-mkdir test
-</pre>
-
-<h3>作業ディレクトリを変更する - cdコマンド</h3>
-
-作業ディレクトリを変更するには「cd」コマンドを使用します。
-
-<pre>
-cd ディレクトリ名
-</pre>
-
-testというディレクトリに作業ディレクトリを変更する例です。
-
-<pre>
-cd test
-</pre>
-
-作業ディレクトリの表示が変わっています。
-
-<pre>
-C:\Users\kimot\test>
-</pre>
-
-一つ上の階層へ作業ディレクトリを変更したい場合は特殊な「..」というディレクトリ名を使用します。
-
-<pre>
-cd ..
-</pre>
-
-<h3>ドライブを変更する</h3>
-
-「c:」で、C ドライブに「d:」で、D ドライブにドライブを変更することができます。
-
-<pre>
-c:
-d:
-</pre>
-
-
-<h3>コマンド履歴を参照する</h3>
-
-上下キーでコマンド履歴をたどることができます。
-
-<pre>
-↑
-↓
-</pre>
-
-<h3>補足:コマンドプロンプトとPowerShellの違い</h3>
-
-WindowsのCUI実行環境にはコマンドプロンプトの他に、PowerShellと呼ばれるものがあります。PowerShellはコマンドプロンプトより機能が豊富な一方で、入出力が「.net」によって変換されるという特殊な仕様があります。
-
-このため、リダイレクトやパイプという機能を使う場合に、意図しない動作を引き起こすことがあります。
-
-<h2>MacへのPerlのインストール</h2>
-
-Macには、デフォルトでPerlがインストールされているので、すぐに使い始めることができます。
-
-<h3>ターミナルの起動</h3>
-
-MacでPerlを実行するには、ターミナルと呼ばれるCUI環境を使用します。
-
-「アプリケーション」->「ユーティリティ」->「ターミナル」からターミナルを起動しましょう。ターミナルは、コマンドが実行できるCUI端末です。
-
-<h3>Perlがインストールされていることの確認</h3>
-
-以下のコマンドでPerlがインストールされているか確認してみましょう。
+Checks of Perl installation.
 
 <pre>
 perl -v
 </pre>
 
-Perlのバージョン情報が表示されればOKです。
-
-<h3>拡張子を表示する</h3>
-
-Perlのプログラムは単なるテキストファイルですが、拡張子を「.pl」にするので、拡張子を表示するように設定しておきましょう。拡張子とはプログラムの種類を表すためのものです。
-
-「Finder」＞「環境設定」と選択してから、「詳細」をクリックします。
-
-「すべてのファイル名拡張子を表示」を選択します。
-
-<h3>Perlプログラムの作成</h3>
-
-お気に入りのテキストエディタで「start.pl」というファイルをホームディレクトリに作成してください。
-
-以下の内容を入力してください。
+If you see the version of Perl, the Perl installation is succeed.
 
 <pre>
-print "Hello World";
+This is perl 5, version 24, subversion 4 (v5.24.4) built for x86_64-msys-thread-multi
 </pre>
 
-<h3>Perlプログラムの実行</h3>
+<h3>Installing CPAN Modules</h3>
 
-Perlを実行するにはperlコマンドを使用します。コマンドプロンプトで以下の記述してEnterを入力してください。
+To make sure your Perl environment is built correctly, install some Perl modules.
+
+Some CPAN modules expect Unix/Linux environments. Make sure the symlink works properly on msys2 with the following command.
 
 <pre>
-perl start.pl
+export MSYS = winsymlinks
 </pre>
 
-以下のように出力されれば、Perlプログラムを実行できています。おめでとうございます。
+At the first time to use cpan, you will be asked if you want to set cpan automatically. Press "Enter".
 
 <pre>
-Hello World
+cpan Mojolicious
+cpan JSON::XS
 </pre>
 
-<h3>Macでのその他のPerlのインストール方法</h3>
+If the installation of these modules are finished, your Perl environment on msys2 is built correctly.
 
-もしシステムにデフォルトでインストールされるPerlではなく、ユーザー環境にPerlをインストールしたい場合は、perlbrewやplenvというツールがあります。
+<h2>Installing Perl on WSL 2</h2>
 
-ユーザー環境にPerlがインストールできるとシステム環境を汚さなくっても済むのでお勧めの方法でもあります。
+<a href="https://docs.microsoft.com/en-us/windows/wsl/install">WSL 2</a> is Windows Subsystem for Linux. You can install Linux on Windows using WSL 2. And you can use Perl.
 
-<h2>Linux/UNIXへのPerlのインストール</h2>
+<img style = "border: 1px solid # ddd; max-width: 600px;" src = "/images/installation/wsl2.png">
 
-ほとんどのLinux/UNIXには、Perlがインストールされています。Perlがインストールされていることを前提に解説します。
+<h3>Installing WSL 2</h3>
 
-<h3>Perlがインストールされていることの確認</h3>
+Let's intall WSL 2. Run the following command on <a href="/blog/20080603121251.html">Windows Command Prompt</a>.
 
-以下のコマンドでPerlがインストールされているか確認してみましょう。
+<pre>
+# Install WSL 2
+wsl --install
+</pre>
+
+<a href="https://en.ubuntu.perlzemi.com/">Ubuntu</a> is installed by default.
+
+Reboot Windows to enable WSL2.
+
+Take a few minutes.
+
+You see the following messages.
+
+<h4>User Name</h4>
+
+<pre>
+Installing, this may take a few minutes...
+
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username:
+</pre>
+
+I enter the following user name as an example.
+
+<pre>
+kimoto_ubuntu
+</pre>
+
+By right-clicking on Ubuntu terminal, you can paste the user name.
+
+<h4>Password</h4>
+
+Next, set password.
+
+The setup of Ubuntu is completed.
+
+<h3>Boot Ubuntu</h3>
+
+Let's boot Ubuntu.
+
+"Start Menu" | "Ubuntu"
+
+<h3>Checking the installation of Perl</h3>
+
+Perl is installed by default on Ubuntu. Let's check the installation of Perl.
 
 <pre>
 perl -v
 </pre>
 
-Perlのバージョン情報が表示されればOKです。
-
-<h3>Perlプログラムの作成</h3>
-
-お気に入りのテキストエディタで「start.pl」というファイルをホームディレクトリに作成してください。
-
-以下の内容を入力してください。
+The version of Perl is displayed.
 
 <pre>
-print "Hello World";
+This is perl 5, version 30, subversion 0 (v5.30.0) built for x86_64-linux-gnu-thread-multi
 </pre>
 
-<h3>Perlプログラムの実行</h3>
+<h3>Show files using Explore</h3>
 
-Perlを実行するにはperlコマンドを使用します。コマンドプロンプトで以下の記述してEnterを入力してください。
+You can see files on Ubuntu by the following path. <b>\\wsl$</b> is root directory of WSL 2.
 
 <pre>
-perl start.pl
+\\wsl$\Ubuntu\home\kimoto_ubuntu
 </pre>
-
-以下のように出力されれば、Perlプログラムを実行できています。おめでとうございます。
-
-<pre>
-Hello World
-</pre>
-
-<h3>Linux/UNIXでのその他のPerlのインストール方法</h3>
-
-もしシステムにデフォルトでインストールされるPerlではなく、ユーザー環境にPerlをインストールしたい場合は、perlbrewやplenvというツールがあります。
-
-ユーザー環境にPerlがインストールできるとシステム環境を汚さなくっても済むのでお勧めの方法でもあります。
-
-<h2>覚えておきたいシェルコマンド</h2>
-
-MacやLinux/UNIXでは、CUI端末で作業をしますが、コマンドを実行できるのはシェルという機能があるからです。
-
-よく使うシェルのコマンドをいくつか覚えておきましょう。
-
-<h3>ファイル一覧を表示する - lsコマンド</h3>
-
-ファイル一覧を表示するには「ls」コマンドを使用します。
-
-<pre>
-ls
-</pre>
-
-<h3>ディレクトリを作成する - mkdirコマンド</h3>
-
-ディレクトリを作成するにはmkdirコマンドを使用します。
-
-<pre>
-mkdir ディレクトリ名
-</pre>
-
-testという名前のディレクトリを作成してみましょう。
-
-<pre>
-mkdir test
-</pre>
-
-<h3>作業ディレクトリを変更する - cdコマンド</h3>
-
-作業ディレクトリを変更するには「cd」コマンドを使用します。
-
-<pre>
-cd ディレクトリ名
-</pre>
-
-testというディレクトリに作業ディレクトリを変更する例です。
-
-<pre>
-cd test
-</pre>
-
-一つ上の階層へ作業ディレクトリを変更したい場合は特殊な「..」というディレクトリ名を使用します。
-
-<pre>
-cd ..
-</pre>
-
-Perlのインストールが完了したので、実際にPerlでプログラムを書いてみましょう。
