@@ -1,0 +1,245 @@
+<style>
+  h2 {
+    counter-increment:count1;
+    counter-reset:count2;
+  }
+  h2:before {
+    content:"6." counter(count1) " ";
+  }
+
+  h3 {
+    counter-increment:count2;
+  }
+  h3:before {
+    content:"6." counter(count1) "." counter(count2) " ";
+  }
+</style>
+
+<div class="chapter">
+<div class="chapter_description">
+  <div class="chapter_description_left">
+    <img width="65" src="images/chapter_top.png">
+  </div>
+  <div class="chapter_description_right">
+    Let's install Perl modules using cpanm.
+  </div>
+</div>
+
+<h2>cpanm - Installation of Perl Modules on User Directories</h2>
+
+<a href="https://metacpan.org/dist/App-cpanminus/view/bin/cpanm">cpanm</a> is a command line tool to install <a href="/blog/20100504127089.html">CPAN</a> modules on user directories. 
+
+<pre>
+# Installation of CPAN modules
+cpanm MoudleName
+</pre>
+
+<h3>Installation of cpanm</h3>
+
+Explains how to install cpanm.
+
+<h4>Strawberry Perl</h4>
+
+<a href="/blog/20180808153368.html">Strawberry Perl</a> has cpanm by default. Strawberry Perl is one of Perl distributions on Windows.
+
+<h4>perlbrew</h4>
+
+If you install <a href="/blog/20110220130464.html">perlbrew</a>, you can install cpanm in the following command.
+
+<pre>
+perlbrew install-cpanm
+</pre>
+
+<h4>plenv</h4>
+
+If you install <a href="/blog/20180816153437.html">plenv</a>, you can install cpanm in the following command.
+
+<pre>
+plenv install-cpanm
+</pre>
+
+<h4>Download cpanm itself</h4>
+
+You can download cpanm itself.
+
+<pre>
+curl -L -O http://xrl.us/cpanm > cpanm
+chmod 755 cpanm
+</pre>
+
+You can execute cpanm as the following.
+
+<pre>
+./cpanm ModuleName
+</pre>
+
+<h4>Package Managers</h4>
+
+Install cpanm using package managers.
+
+<b><a href="https://en.ubuntu.perlzemi.com/">Ubuntu</a>, <a href="https://en.wikipedia.org/wiki/Debian">Debian</a></b>
+
+<pre>
+apt install cpanminus
+</pre>
+
+<b><a href="https://en.wikipedia.org/wiki/Red_Hat_Linux">Red Hat Linux</a>, <a href="https://en.centos.perlzemi.com/">Cent OS</a></b>
+
+<pre>
+yum install perl-App-cpanminus
+</pre>
+
+<h3>Install CPAN Modules</h3>
+
+Install CPAN modules using cpanm.
+
+<pre>
+# Install CPAN modules.
+cpanm Mojolicious
+</pre>
+
+<h4>Version Specific</h4>
+
+You can install modules with the version.
+
+<pre>
+cpanm Mojolicious@9.23
+</pre>
+
+<h4>Specifying the installation directory</h4>
+
+You can install CPAN modules on the specified directory using <b>-L</b> option.
+
+<pre>
+cpanm -L extlib DBIx::Custom
+</pre>
+
+<a href="https://dbix-custom.perlzemi.com/">DBIx::Custom</a> will be installed "extlib" in the current directory.
+
+<h3>cpanfile - Definition of Modules</h3>
+
+You can defined modules you want to install and the versions using <b>cpanfile</b>.
+
+<h4>Writing cpanfile</h4>
+
+<b>cpanfile</b> is a file to define the modules and the versions.
+
+Create the file "cpanfile".
+
+<pre>
+# Create a "cpanfile" file
+touch cpanfile
+</pre>
+
+Define the moudles and the versions.
+
+<pre>
+requires 'DBI', '== 1.619';
+requires 'DBD::SQLite', '== 1.36_04';
+requires 'DBIx::Custom', '== 0.25';
+</pre>
+
+<b>cpanfile formats:</b>
+
+<pre>
+requires MODULE_NAME VERSION
+</pre>
+
+You can use the following syntax for the version:
+
+<table>
+  <tr>
+    <td>
+      <b> Descriptions </b>
+    </td>
+    <td>
+      <b> Formats </b>
+    </td>
+    <td>
+      <b> Examples </b>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Specified version
+    </td>
+    <td>
+      == Version
+    </td>
+    <td>
+      == 0.03
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Specified version or higher
+    </td>
+    <td>
+      >= Version
+    </td>
+    <td>
+      >= 0.03
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Below the specified version
+    </td>
+    <td>
+      <= Version
+    </td>
+    <td>
+      <= 0.03
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Greater than the specified version
+    </td>
+    <td>
+      > Version
+    </td>
+    <td>
+      > 0.03
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Less than the specified version
+    </td>
+    <td>
+      < Version
+    </td>
+    <td>
+      < 0.03
+    </td>
+  </tr>
+</table>
+
+<h4>Install Modules using cpanfile</h4>
+
+You can install CPAN modules from the definition of cpanfile using the "<b>--installdeps</b>" option.
+
+<pre>
+# Install CPAN modules from the definition of cpanfile
+perl cpanm --installdeps .
+</pre>
+
+You can also install modules on the specified directory using the "<strong>-L</strong>" option.
+
+<pre>
+perl cpanm -L extlib - installdeps.
+</pre>
+
+<h3>Showing Help</h3>
+
+Show the cpanm help.
+
+<pre>
+cpanm -h
+</pre>
