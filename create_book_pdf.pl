@@ -87,7 +87,7 @@ sub slurp {
 
 sub create_toc_html_file {
   my $toc_content = qq|<div class="toc">\n|;
-  $toc_content .= "<h2>目次</h2>\n";
+  $toc_content .= "<h2>Table of Contents</h2>\n";
   for my $chapter_number (1 .. $chapter_number_last) {
     
     # 章扉から章見出しを取得
